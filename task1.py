@@ -6,9 +6,10 @@
 '''
 
 import argparse
-parser = argparse.ArgumentParser(description='Скрипт расчета заработной платы сотрудника')
-parser.add_argument('production', type=int, help='Выроботка в часах на сотрудника')
-parser.add_argument('bid', type=float, help='Ставка в час на сотрудника')
-parser.add_argument('prize', type=float, help='Премия сотрудника')
-args = parser.parse_args()
-print(f'{args.production * args.bid + args.prize}')
+
+parser = argparse.ArgumentParser (description = 'Скрипт расчета заработной платы сотрудника')
+parser.add_argument ('production', type = int, help = 'Выроботка в часах на сотрудника, целое число')
+parser.add_argument ('bid', type = float, help = 'Ставка в час на сотрудника, целое или дробное число')
+parser.add_argument ('prize', type = float, help = 'Премия сотрудника, целое или дробное число')
+args = parser.parse_args ()
+print (f'Заработная плата сотрудника составляет: {args.production * args.bid + args.prize}')
