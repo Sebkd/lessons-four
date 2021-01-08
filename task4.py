@@ -17,9 +17,11 @@ original_list = [element for element in range(randint(1, 10))]
 add_list = [element for element in range(randint(1, 10))]
 original_list.extend(add_list)
 shuffle(original_list)
-print(len(original_list), original_list)
+print(original_list)
 add_list.clear()
-#add_list = reduce(lambda a, b: a if a > b else b, original_list)
-add_list = map(check_fun, original_list)
+for count, element in enumerate(original_list, start = 1):
+    add_list = list(filter(lambda number: number != element, original_list[count:]))
+    print(count, element)
+#add_list = [element for element in original_list if (filter(lambda number: number != element, original_list))]
 print(add_list)
 
