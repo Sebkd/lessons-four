@@ -7,6 +7,8 @@
 '''
 import random
 
-original_list = [element for element in range(random.randint(1, 100))]
+original_list = [element for element in range(random.randint(1, 1000))]
 random.shuffle(original_list)
 print(original_list)
+modifited_list = [element for count, element in enumerate(original_list[1:]) if element > original_list[count]]
+print(modifited_list)
