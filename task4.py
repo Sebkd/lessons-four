@@ -8,6 +8,23 @@
 '''
 import random
 
-original_list = [element for element in range(random.randint(1, 1000))]
+def check_fun(*args):
+    for count, element in enumerate(args[0]):
+        yield element
+
+original_list = [element for element in range(random.randint(1, 10))]
+add_list = [element for element in range(random.randint(1, 10))]
+original_list.extend(add_list)
 random.shuffle(original_list)
-print(original_list)
+print(len(original_list), original_list)
+add_number = check_fun(original_list)
+print(add_number)
+# for count, element in enumerate (original_list):
+#     for number in original_list[count:]:
+#         print (count, element)
+#         if original_list.index(element, count) != 0:
+#             print(f' попались {count}, {element}')
+#             add_list.append(element)
+
+
+print(add_list)
