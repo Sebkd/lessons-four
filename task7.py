@@ -13,7 +13,7 @@ def fact(end_number):
     for el in range(1, end_number+1):
         print(f'Факториал {el}! = {factorial(el)}')
     yield factorial(end_number)
-    
+
 calc_number = randint(1,25)
 get_fact = fact(calc_number)
 print(f'\nЧисло n = {calc_number}, Факториал n! = {[el for el in get_fact]}, Проверка = {factorial(calc_number)}')
